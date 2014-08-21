@@ -1,0 +1,16 @@
+<oddci>
+	<experiment id="3"
+			    devicesNumber="100000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="0.2"
+			    volatility="0.5"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+</oddci>

@@ -1,0 +1,42 @@
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	14s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	23s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	24s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	34s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	37s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	11s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	14s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	21s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	22s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	23s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	1s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	2s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	2s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	2s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	3s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	1s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	1s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	1s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	2s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	2s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	1s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	1s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	2s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	2s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	2s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	2h6min4s	1s	0	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	3h6min4s	1s	1	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	4h6min4s	2s	2	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	5h6min4s	2s	3	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
+2	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
+2	Reactive	Informative	Tempestive	10000	500KiB	0%	0,00000	0%	0	1	6h6min4s	2s	4	0	0	0	10000	0	0	0	0	0	100	0	1000	8	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	

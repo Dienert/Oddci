@@ -1,0 +1,20 @@
+<oddci>
+	<experiment id="1"
+			    devicesNumber="8" 
+			    cycleInterval="1h" 
+			    subcycleInterval="10min"
+			    repetitions="5"
+			    availabilityCheckInterval="1h"
+			    pnaAverageSessionTime="4.52"
+			    broadcastBandwidth="1Mib"
+			    returnChannelBandwidth="1Mib"
+			    pnaMaxDelay="5"
+			    >
+		<instance id="1"
+				   startTime="1h" 
+				   requestedSlots="100" 
+				   requestedDevices="4" 
+				   imageSize="5MiB">
+		</instance>
+	</experiment>
+</oddci>

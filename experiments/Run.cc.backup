@@ -1,0 +1,294 @@
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
+
+#include <string.h>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <cstdlib>
+#include "rapidxml.hpp"
+#include "Experiment.h"
+#include "ExpInstance.h"
+
+using namespace rapidxml;
+
+enum Heuristic {
+	REACTIVE,
+	PROACTIVE
+};
+
+enum Method {
+	INFORMATIVE,
+	EXPLORATORY
+};
+
+enum Selection {
+	TEMPESTIVE,
+	RANKING
+};
+
+using namespace std;
+
+double availability = 0.2;
+Heuristic activeHeuristic;
+Method activePNAsEstimationMethod;
+Selection selection;
+string dir = "results/";
+string fileName;
+ofstream file;
+
+int numArg;
+char **args;
+char estMethodName[13];
+char heuristicName[13];
+char selectionName[13];
+
+string getName(Heuristic heuristic, Method estMethod, Selection selection) {
+    if (heuristic == PROACTIVE) {
+        strcpy(heuristicName, string("proactive").c_str());
+    } else {
+        strcpy(heuristicName, string("reactive").c_str());
+    }
+    if (estMethod == INFORMATIVE) {
+        strcpy(estMethodName, string("informative").c_str());
+    } else {
+        strcpy(estMethodName, string("exploratory").c_str());
+    }
+    if (selection == TEMPESTIVE) {
+        strcpy(selectionName, string("tempestive").c_str());
+    } else {
+        strcpy(selectionName, string("ranking").c_str());
+    }
+    string name = heuristicName;
+    name += "-";
+    name += estMethodName;
+    name += "-";
+    name += selectionName;
+    return name;
+}
+
+void execExperiment(Experiment *experiment) {
+
+//    cout << "vou iniciar a copia do arquivo geral de inicializacao" << endl;
+    ifstream generalInit("general.ini", std::ios::binary);
+    char specificIni[200];
+    sprintf(specificIni, "%03d-%s-%s-%s-%0.2f-%s", experiment->getId(), heuristicName, estMethodName, selectionName, availability, "specific.ini");
+    ofstream specificInitBinary(specificIni, std::ios::binary);
+    specificInitBinary << generalInit.rdbuf();
+    specificInitBinary.close();
+
+    ofstream specificInit(specificIni, std::ios::app);
+
+    specificInit << endl;
+    specificInit << "repeat = " << experiment->getRepetitions() << endl;
+    specificInit << endl;
+    specificInit << "BroadcastNetwork.experimentId = " << experiment->getId() << endl;
+    specificInit << "BroadcastNetwork.devicesNumber = " << experiment->getDevicesNumber() << endl;
+    specificInit << "BroadcastNetwork.initialAvailability = " << availability << endl;
+    specificInit << "BroadcastNetwork.activeHeuristic = \"" << heuristicName << "\"" << endl;
+    specificInit << "BroadcastNetwork.activePNAsEstimationMethod = \"" << estMethodName << "\"" << endl;
+    specificInit << "BroadcastNetwork.selection = \"" << selectionName << "\"" << endl;
+    specificInit << "BroadcastNetwork.pnaAverageSessionTime = " << experiment->getPnaAverageSessionTime() << endl;
+    specificInit << "BroadcastNetwork.pnaMaxDelay = " << experiment->getPnaMaxDelay() << endl;
+    specificInit << "BroadcastNetwork.workload = \"" << experiment->getWorkload() << "\"" << endl;
+    specificInit << "BroadcastNetwork.broadcastBandwidth = " << experiment->getBroadcastBandwidth() << endl;
+    specificInit << "**.pnaGroup*.g.channel.datarate = " << experiment->getReturnChannelBandwidth() << " #direct channel" << endl;
+
+//    string imageSizes = "BroadcastNetwork.imageSizes = \"";
+//    string requestedDevices = "BroadcastNetwork.requestedDevices = \"";
+//    string startTimes = "BroadcastNetwork.startTimes = \"";
+//    string requestedSlots = "BroadcastNetwork.requestedSlots = \"";
+//
+//    int instancesNumber = experiment->getInstances()->size();
+//
+//    specificInit << "BroadcastNetwork.instancesNumber = " << instancesNumber << endl;
+//
+//    for (int i=0; i < instancesNumber; i++) {
+//        ExpInstance *instance = experiment->getInstances()->at(i);
+//        imageSizes +=  instance->getImageSize();
+//        requestedDevices += instance->getRequestedDevices();
+//        startTimes += instance->getStartTime();
+//        requestedSlots += instance->getRequestedSlots();
+//        if (i < instancesNumber-1) {
+//            imageSizes += " ";
+//            requestedDevices += " ";
+//            startTimes += " ";
+//            requestedSlots += " ";
+//        }
+//    }
+//    imageSizes += "\"";
+//    requestedDevices += "\"";
+//    startTimes += "\"";
+//    requestedSlots += "\"";
+//
+//    specificInit << imageSizes << endl;
+//    specificInit << requestedDevices << endl;
+//    specificInit << startTimes << endl;
+//    specificInit << requestedSlots << endl;
+
+    specificInit.close();
+
+	char msg[500] = "Oddci -u Cmdenv -f ";
+	strcat(msg, specificIni);
+	cout << msg << endl;
+	system(msg);
+}
+
+void initializeFile(int experimentId){
+    cout << "Criando arquivo de registros" << endl;
+	fileName = getName(activeHeuristic, activePNAsEstimationMethod, selection);
+	char idFormatted[20];
+	sprintf(idFormatted, "%03d", experimentId);
+	string path = dir + idFormatted + "-" + fileName + ".txt";
+	printf("%s\n", path.c_str());
+	file.open(path.c_str());
+	file.close();
+}
+
+void handleAvailability(Experiment *experiment) {
+	do {
+		execExperiment(experiment);
+		availability += 0.2;
+	} while(availability <= 0.8);
+	availability = 0.2;
+}
+
+ExpInstance * handleInstance(xml_node<> *instanceNode) {
+    ExpInstance *instance = new ExpInstance();
+    instance->setId(instanceNode->first_attribute("id")->value());
+    instance->setImageSize(instanceNode->first_attribute("imageSize")->value());
+    instance->setStartTime(instanceNode->first_attribute("startTime")->value());
+    instance->setRequestedSlots(instanceNode->first_attribute("requestedSlots")->value());
+    instance->setRequestedDevices(instanceNode->first_attribute("requestedDevices")->value());
+    return instance;
+}
+
+void iterateInstance(Experiment *experiment, xml_node<> *instanceNode) {
+    ExpInstance *instance = handleInstance(instanceNode);
+    experiment->getInstances()->push_back(instance);
+    cout << "terminei a instancia " << instance->getId() << endl;
+    xml_node<> *nextInstance = instanceNode->next_sibling();
+    if (nextInstance) {
+        iterateInstance(experiment, nextInstance);
+    }
+}
+
+void handleExperiment(xml_node<> *experimentNode) {
+
+    Experiment *experiment = new Experiment();
+    experiment->setId(atoi(experimentNode->first_attribute("id")->value()));
+    experiment->setDevicesNumber(atoi(experimentNode->first_attribute("devicesNumber")->value()));
+    experiment->setCycleInterval(experimentNode->first_attribute("cycleInterval")->value());
+    experiment->setSubcycleInterval(experimentNode->first_attribute("subcycleInterval")->value());
+    experiment->setRepetitions(atoi(experimentNode->first_attribute("repetitions")->value()));
+    experiment->setAvailabilityCheckInterval(experimentNode->first_attribute("availabilityCheckInterval")->value());
+    experiment->setPnaAverageSessionTime(atof(experimentNode->first_attribute("pnaAverageSessionTime")->value()));
+    experiment->setBroadcastBandwidth(experimentNode->first_attribute("broadcastBandwidth")->value());
+    experiment->setReturnChannelBandwidth(experimentNode->first_attribute("returnChannelBandwidth")->value());
+    experiment->setPnaMaxDelay(experimentNode->first_attribute("pnaMaxDelay")->value());
+    experiment->setWorkload(experimentNode->first_attribute("workload")->value());
+
+//    xml_node<> *instance = experimentNode->first_node();
+//    iterateInstance(experiment, instance);
+
+    printf("####%s %03d####\n", "Experiment:", experiment->getId());
+
+    activeHeuristic = REACTIVE;
+    activePNAsEstimationMethod = INFORMATIVE;
+    selection = TEMPESTIVE;
+
+    for (int i=2;i<numArg;i++) {
+        char *result;
+        int combination = strtol(args[i], &result, 10);
+        printf("%s %d\n", "Combination:", combination);
+        switch (combination) {
+            case 1 :
+                activeHeuristic = REACTIVE;
+                activePNAsEstimationMethod = INFORMATIVE;
+                selection = TEMPESTIVE;
+                break;
+            case 2 :
+                activeHeuristic = REACTIVE;
+                activePNAsEstimationMethod = INFORMATIVE;
+                selection = RANKING;
+                break;
+            case 3 :
+                activeHeuristic = REACTIVE;
+                activePNAsEstimationMethod = EXPLORATORY;
+                selection = TEMPESTIVE;
+                break;
+            case 4 :
+                activeHeuristic = REACTIVE;
+                activePNAsEstimationMethod = EXPLORATORY;
+                selection = RANKING;
+                break;
+            case 5 :
+                activeHeuristic = PROACTIVE;
+                activePNAsEstimationMethod = INFORMATIVE;
+                selection = TEMPESTIVE;
+                break;
+            case 6 :
+                activeHeuristic = PROACTIVE;
+                activePNAsEstimationMethod = INFORMATIVE;
+                selection = RANKING;
+                break;
+            case 7 :
+                activeHeuristic = PROACTIVE;
+                activePNAsEstimationMethod = EXPLORATORY;
+                selection = TEMPESTIVE;
+                break;
+            case 8 :
+                activeHeuristic = PROACTIVE;
+                activePNAsEstimationMethod = EXPLORATORY;
+                selection = RANKING;
+                break;
+        }
+        initializeFile(experiment->getId());
+        handleAvailability(experiment);
+    }
+}
+
+void iterateExperiment(xml_node<> *experimentNode) {
+    handleExperiment(experimentNode);
+    xml_node<> *nextExperiment = experimentNode->next_sibling();
+    if (nextExperiment) {
+        iterateExperiment(nextExperiment);
+    }
+}
+
+int main2(int argc, char **argv) {
+
+    numArg = argc;
+    args = argv;
+
+    xml_document<> oddci;
+    ifstream t(argv[1]);
+    string str;
+    t.seekg(0, std::ios::end);
+    str.reserve((unsigned long)t.tellg());
+    t.seekg(0, std::ios::beg);
+
+    str.assign((std::istreambuf_iterator<char>(t)),
+                std::istreambuf_iterator<char>());
+
+    char *xml = const_cast<char*> (str.c_str());
+    oddci.parse<0>(xml);
+
+    xml_node<> *experiment = oddci.first_node("oddci")->first_node("experiment");
+    iterateExperiment(experiment);
+
+	return 0;
+}

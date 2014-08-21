@@ -1,0 +1,89 @@
+<oddci>
+<!--	<experiment id="1"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="0"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+	<experiment id="2"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="0.05"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+	<experiment id="3"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="0.25"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+	<experiment id="4"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="0.5"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+	-->
+<!--	-->
+	<experiment id="5"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="0.75"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+	<experiment id="6"
+			    devicesNumber="40000" 
+			    cycleInterval="1h" 
+			    subcycleInterval="15min"
+			    repetitions="1"
+			    initialAvailability="1"
+			    volatility="1"
+			    availabilityCheckInterval="1h"
+			    broadcastBandwidth="1Mbps"
+			    returnChannelBandwidth="1Mbps"
+			    pnaMaxDelay="5s"
+			    workload="workload_1_hr_100_instances.txt"
+			    >
+	</experiment>
+<!--	-->
+</oddci>

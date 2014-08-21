@@ -1,0 +1,81 @@
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+//
+
+#include <string.h>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <cstdlib>
+#include "rapidxml.hpp"
+#include "rapidxml_print.hpp"
+#include <streambuf>
+
+using namespace rapidxml;
+
+using namespace std;
+
+void handleInstance(xml_node<> *instance) {
+    cout << "instance " << instance->first_attribute("id")->value();
+    cout << ", requestedSlots: " << instance->first_attribute("requestedSlots")->value() << endl;
+}
+
+void iterateInstance(xml_node<> *instance) {
+    handleInstance(instance);
+    xml_node<> *nextInstance = instance->next_sibling();
+    if (nextInstance) {
+        iterateInstance(nextInstance);
+    }
+}
+
+void handleExperiment(xml_node<> *experiment) {
+    cout << "experiment " << experiment->first_attribute("id")->value();
+    cout << ", repetitions " << experiment->first_attribute("repetitions")->value() << endl;
+}
+
+void iterateExperiment(xml_node<> *experiment) {
+    handleExperiment(experiment);
+    xml_node<> *instance = experiment->first_node();
+    iterateInstance(instance);
+    xml_node<> *nextRun = experiment->next_sibling();
+    if (nextRun) {
+        iterateExperiment(nextRun);
+    }
+}
+
+
+int main(int argc, char **argv) {
+
+    xml_document<> oddci;
+    ifstream t(argv[1]);
+    string str;
+
+    t.seekg(0, std::ios::end);
+    str.reserve(t.tellg());
+    t.seekg(0, std::ios::beg);
+
+    str.assign((std::istreambuf_iterator<char>(t)),
+                std::istreambuf_iterator<char>());
+
+    char *xml = const_cast<char*> (str.c_str());
+    oddci.parse<0>(xml);
+
+    xml_node<> *experiment = oddci.first_node("oddci")->first_node("experiment");
+    iterateExperiment(experiment);
+
+    return 0;
+}
+
+

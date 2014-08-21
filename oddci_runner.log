@@ -1,0 +1,143 @@
+
+*********************************************
+Starting execution with parameters:
+    combinations: 1
+    experiments: experiments/validation-experiments.xml
+    generating .ini files and executing experiments
+    repetition: 0
+    number of cores to use: 64
+********************************************
+
+####Experiment: 001####
+
+Combination: Reactive-Informative-Tempestive
+
+Starting thread 1/12
+
+####Experiment: 002####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 001-Reactive-Informative-Tempestive-0.00-0.00.ini
+Outputfile  > results/out/001-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+
+Starting thread 2/12
+Oddci -u Cmdenv -f 001-Reactive-Informative-Tempestive-0.00-0.00.ini -r 0 > results/out/001-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+Initialization cyclesfile: 002-Reactive-Informative-Tempestive-0.00-0.00.ini
+Outputfile  > results/out/002-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+
+####Experiment: 003####
+
+Combination: Reactive-Informative-Tempestive
+Oddci -u Cmdenv -f 002-Reactive-Informative-Tempestive-0.00-0.00.ini -r 0 > results/out/002-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+
+Starting thread 3/12
+
+####Experiment: 004####
+Initialization cyclesfile: 003-Reactive-Informative-Tempestive-0.00-0.00.ini
+Combination: Reactive-Informative-Tempestive
+
+Outputfile  > results/out/003-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+Oddci -u Cmdenv -f 003-Reactive-Informative-Tempestive-0.00-0.00.ini -r 0 > results/out/003-Reactive-Informative-Tempestive-0.00-0.00.ini.out
+
+Starting thread 4/12
+
+####Experiment: 005####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 004-Reactive-Informative-Tempestive-1.00-0.00.ini
+Outputfile  > results/out/004-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+Oddci -u Cmdenv -f 004-Reactive-Informative-Tempestive-1.00-0.00.ini -r 0 > results/out/004-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+
+Starting thread 5/12
+
+####Experiment: 006####
+Initialization cyclesfile: 005-Reactive-Informative-Tempestive-1.00-0.00.ini
+Outputfile  > results/out/005-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+
+Combination: Reactive-Informative-Tempestive
+Oddci -u Cmdenv -f 005-Reactive-Informative-Tempestive-1.00-0.00.ini -r 0 > results/out/005-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+
+Starting thread 6/12
+
+####Experiment: 007####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 006-Reactive-Informative-Tempestive-1.00-0.00.ini
+Outputfile  > results/out/006-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+Oddci -u Cmdenv -f 006-Reactive-Informative-Tempestive-1.00-0.00.ini -r 0 > results/out/006-Reactive-Informative-Tempestive-1.00-0.00.ini.out
+
+Starting thread 7/12
+
+####Experiment: 008####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 007-Reactive-Informative-Tempestive-0.00-1.00.ini
+Outputfile  > results/out/007-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+Oddci -u Cmdenv -f 007-Reactive-Informative-Tempestive-0.00-1.00.ini -r 0 > results/out/007-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+
+Starting thread 8/12
+
+####Experiment: 009####
+Initialization cyclesfile: 008-Reactive-Informative-Tempestive-0.00-1.00.ini
+Combination: Reactive-Informative-Tempestive
+
+Outputfile  > results/out/008-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+Oddci -u Cmdenv -f 008-Reactive-Informative-Tempestive-0.00-1.00.ini -r 0 > results/out/008-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+
+Starting thread 9/12
+
+####Experiment: 010####
+
+Combination: Reactive-Informative-Tempestive
+
+Starting thread 10/12
+
+####Experiment: 011####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 010-Reactive-Informative-Tempestive-1.00-1.00.ini
+Outputfile  > results/out/010-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+Initialization cyclesfile: 009-Reactive-Informative-Tempestive-0.00-1.00.ini
+Outputfile  > results/out/009-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+Oddci -u Cmdenv -f 010-Reactive-Informative-Tempestive-1.00-1.00.ini -r 0 > results/out/010-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+Oddci -u Cmdenv -f 009-Reactive-Informative-Tempestive-0.00-1.00.ini -r 0 > results/out/009-Reactive-Informative-Tempestive-0.00-1.00.ini.out
+
+Starting thread 11/12
+
+####Experiment: 012####
+
+Combination: Reactive-Informative-Tempestive
+Initialization cyclesfile: 011-Reactive-Informative-Tempestive-1.00-1.00.ini
+Outputfile  > results/out/011-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+Oddci -u Cmdenv -f 011-Reactive-Informative-Tempestive-1.00-1.00.ini -r 0 > results/out/011-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+
+Starting thread 12/12
+Initialization cyclesfile: 012-Reactive-Informative-Tempestive-1.00-1.00.ini
+Outputfile  > results/out/012-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+Oddci -u Cmdenv -f 012-Reactive-Informative-Tempestive-1.00-1.00.ini -r 0 > results/out/012-Reactive-Informative-Tempestive-1.00-1.00.ini.out
+
+Finishing thread 001-Reactive-Informative-Tempestive-0.00-0.00.ini  in 24s
+
+Finishing thread 007-Reactive-Informative-Tempestive-0.00-1.00.ini  in 24s
+
+Finishing thread 010-Reactive-Informative-Tempestive-1.00-1.00.ini  in 24s
+
+Finishing thread 004-Reactive-Informative-Tempestive-1.00-0.00.ini  in 24s
+
+Finishing thread 002-Reactive-Informative-Tempestive-0.00-0.00.ini  in 30s
+
+Finishing thread 008-Reactive-Informative-Tempestive-0.00-1.00.ini  in 30s
+
+Finishing thread 005-Reactive-Informative-Tempestive-1.00-0.00.ini  in 35s
+
+Finishing thread 003-Reactive-Informative-Tempestive-0.00-0.00.ini  in 1min38s
+
+Finishing thread 009-Reactive-Informative-Tempestive-0.00-1.00.ini  in 1min39s
+
+Finishing thread 011-Reactive-Informative-Tempestive-1.00-1.00.ini  in 1min51s
+
+Finishing thread 006-Reactive-Informative-Tempestive-1.00-0.00.ini  in 2min29s
+
+Finishing thread 012-Reactive-Informative-Tempestive-1.00-1.00.ini  in 15min43s
+
+All threads finished in 15min43s

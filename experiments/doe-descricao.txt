@@ -1,0 +1,60 @@
+Diénert,
+
+Conforme solicitado, segue a forma de saída dos dados do simulador:
+
+Os experimentos serão identificados pelo número atribuído na planilha (1 a 32) referente a uma combinação específica de configurações:
+id do experimento, volatilidade inserida, população, tamanho da imagem da aplicação, qtd instancias, makespan padrão, workload (calculado dos demais parâmetros)
+
+Para cada subciclo, para cada instância e para cada tipo de amostra o simulador deve gravar uma linha no arquivo com o seguinte formato: 
+
+heurística, método_estimativa, método_seleção, id_experimento, repetição, id_instância, ciclo, subciclo, id_amostra, valor_amostra, tempo_amostra
+
+Os tipo de  amostra são:
+
+ID   DESCRIÇÃO
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+THCI: tipo_heuristica_coordenacao_instancia (P|R) (proativa/reativa)
+TMET: tipo_método_estimativa_tamanho (I|E) (informativo/exploratório) - só iremos usar o informativo no DoE
+TMSD: tipo_método_selecao_dispositivos (T|R) (tempestiva/ranqueamento) - só iremos usar o tempestivo no DoE
+
+QDRI: qtd dispositivos requisitados instancia
+TSRI: total slots requisitados instancia
+
+TDER: total dispositivos existentes rede 
+
+TDLR: total dispositivos ligados rede subciclo
+TDAR: total dispositivos ativos rede subciclo
+TDIR: total dispositivos idle rede subciclo
+TDDR: total dispositivos desligados rede subciclo
+
+VORS: volatilidade observada rede subciclo
+TERS: tamanho estimado rede subciclo
+
+DAIS: dispositivos ativos instancia subciclo
+DRIS: dispositivos requisitados instância subciclo
+DLIS: dispositivos alocados instancia subciclo
+DDIS: dispositivos descartados instancia subciclo
+
+SIIS: slots iniciados instancia subciclo
+SCIS: slots completados instancia subciclo
+
+QWIS: quantidade wakeups instancia subciclo
+TMFS: tamanho máximo fila wajeups subciclo
+QSIS: quantidade sondas instancia subciclo
+
+Um exemplo de trecho do arquivo é:
+P,I,T,1,1,1,1,0,QDRI,1000,0:00:00
+P,I,T,1,1,1,1,0,TSRI,10000,0:00:00
+P,I,T,1,1,1,1,0,TDER,100000,0:00:00
+P,I,T,1,1,1,1,0,TDLR,88000,0:00:00
+...
+P,I,T,1,1,1,1,1,TDLR,1000,0:15:00
+P,I,T,1,1,1,1,1,TSRI,10000,0:15:00
+
+e assim por diante, com todos os tipos de amostra sendo exportados a cada subciclo.
+
+Talvez seja melhor gerar um arquivo por experimento, com todas as suas repetições. Colocar o tipo da heurística e o id do experimento no nome do arquivo de saída.
+
+[]s
+
+Rostand

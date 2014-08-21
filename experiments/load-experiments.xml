@@ -1,0 +1,36 @@
+<oddci>
+<!--	
+	<experiment id="1"
+	    devicesNumber="1500000" 
+	    cycleInterval="1h" 
+	    subcycleInterval="15min"
+	    repetitions="9"
+	    initialAvailability="1"
+	    volatility="0"
+	    availabilityCheckInterval="1h"
+	    broadcastBandwidth="1Mbps"
+	    returnChannelBandwidth="1Mbps"
+	    imageSize="500KiB"
+	    pnaMaxDelay="5s"
+	    workload=" workload-load-exp-001.txt"
+	    >
+		<!-- demorou 33min39s no total -->
+	</experiment>
+-->
+	<experiment id="2"
+	    devicesNumber="2000000" 
+	    cycleInterval="1h" 
+	    subcycleInterval="15min"
+	    repetitions="9"
+	    initialAvailability="1"
+	    volatility="0"
+	    availabilityCheckInterval="1h"
+	    broadcastBandwidth="1Mbps"
+	    returnChannelBandwidth="1Mbps"
+	    imageSize="500KiB"
+	    pnaMaxDelay="5s"
+	    workload=" workload-load-exp-001.txt"
+	    >
+		<!-- demorou 53min34s no total -->
+	</experiment>
+</oddci>
