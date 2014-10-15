@@ -1,8 +1,0 @@
-4
-4	Proactive	Exploratory	Tempestive	4	5MiB	100%	0,00000	75%	0	1	2h6min41s	8s	0	0	0	0	0	0	0	0	0	0	500	0	6000	4	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
-4	Proactive	Exploratory	Tempestive	4	5MiB	100%	0,00000	75%	0	1	3h6min41s	8s	1	0	0	0	0	0	0	0	0	0	500	0	6000	4	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
-4	Proactive	Exploratory	Tempestive	4	5MiB	100%	0,00000	75%	0	1	4h6min41s	8s	2	0	0	0	0	0	0	0	0	0	500	0	6000	4	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
-4	Proactive	Exploratory	Tempestive	4	5MiB	100%	0,00000	75%	0	1	5h6min41s	8s	3	0	0	0	0	0	0	0	0	0	500	0	6000	4	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
-4	aborted									1									mean	0,00000	mean	0,00000							mean	0,00000					
-4	Proactive	Exploratory	Tempestive	4	5MiB	100%	0,00000	75%	0	1	6h6min41s	8s	4	0	0	0	0	0	0	0	0	0	500	0	6000	4	1	4	0	0,00000	0,00000	0,00000	-nan	0,00000	
-4
